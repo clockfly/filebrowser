@@ -1,4 +1,4 @@
-module github.com/filebrowser/filebrowser/v2
+module github.com/clockfly/filebrowser/v2
 
 go 1.20
 
