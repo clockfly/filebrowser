@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div v-if="!inIframe" style="height: 65px"/>
+    <div v-if="!inIframe" style="height: 60px"/>
     <div v-if="progress" class="progress">
       <div v-bind:style="{ width: this.progress + '%' }"></div>
     </div>
