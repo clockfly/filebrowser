@@ -1,8 +1,14 @@
 <template>
   <div>
-    <header-bar showMenu showLogo>
-      <search />
+
+    <header-bar v-if="!inIframe" showMenu showLogo>
+    </header-bar>
+    <header-bar class="breadcrumbs" style="position: relative">
+
+      <breadcrumbs base="/files" />
+
       <title />
+      <search />
       <action
         class="search-button"
         icon="search"
@@ -80,6 +86,9 @@
         />
       </template>
     </header-bar>
+
+
+
 
     <div v-if="isMobile" id="file-selection">
       <span v-if="selectedCount > 0">{{ selectedCount }} selected</span>
@@ -279,10 +288,12 @@ import HeaderBar from "@/components/header/HeaderBar.vue";
 import Action from "@/components/header/Action.vue";
 import Search from "@/components/Search.vue";
 import Item from "@/components/files/ListingItem.vue";
+import Breadcrumbs from "@/components/Breadcrumbs.vue";
 
 export default {
   name: "listing",
   components: {
+    Breadcrumbs,
     HeaderBar,
     Action,
     Search,
@@ -302,6 +313,13 @@ export default {
     ...mapGetters(["selectedCount", "currentPrompt"]),
     nameSorted() {
       return this.req.sorting.by === "name";
+    },
+    inIframe() {
+      try {
+        return window.self !== window.top;
+      } catch (e) {
+        return true;
+      }
     },
     sizeSorted() {
       return this.req.sorting.by === "size";

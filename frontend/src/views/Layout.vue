@@ -1,5 +1,6 @@
 <template>
   <div>
+    <div v-if="!inIframe" style="height: 65px"/>
     <div v-if="progress" class="progress">
       <div v-bind:style="{ width: this.progress + '%' }"></div>
     </div>
@@ -33,6 +34,13 @@ export default {
     ...mapGetters(["isLogged", "progress", "currentPrompt"]),
     ...mapState(["user"]),
     isExecEnabled: () => enableExec,
+    inIframe() {
+      try {
+        return window.self !== window.top;
+      } catch (e) {
+        return true;
+      }
+    },
   },
   watch: {
     $route: function () {

@@ -1,6 +1,6 @@
 body {
   font-family: "Roboto", sans-serif;
-  padding-top: 4em;
+  /*padding-top: 65px;*/
   background-color: #fafafa;
   color: #333333;
 }
@@ -56,10 +56,14 @@ i.spin {
 }
 
 nav {
-  width: 16em;
+  width: 260px;
+  height: 100%;
   position: fixed;
-  top: 4em;
+
   left: 0;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 4px 20px 0;
+  padding: 0px 4px;
 }
 
 body.rtl nav {
@@ -71,7 +75,7 @@ nav .action {
   width: 100%;
   display: block;
   border-radius: 0;
-  font-size: 1.1em;
+  font-size: 14px;
   padding: 0.5em;
   white-space: nowrap;
   overflow: hidden;
@@ -93,8 +97,9 @@ nav .action > * {
 
 main {
   min-height: 1em;
-  margin: 0 1em 1em auto;
-  width: calc(100% - 19em);
+  margin-left: auto;
+  margin-right: 0px;
+  width: calc(100% - 270px);
 }
 
 .breadcrumbs {

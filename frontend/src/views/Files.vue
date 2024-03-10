@@ -2,7 +2,6 @@
   <div>
     <header-bar v-if="error || req.type == null" showMenu showLogo />
 
-    <breadcrumbs base="/files" />
     <listing />
     <errors v-if="error" :errorCode="error.status" />
     <component v-else-if="currentView" :is="currentView"></component>

@@ -2,7 +2,7 @@
 
 /* General */
 
-.file-icons [aria-label^="."] { opacity: 0.33 }
+/*.file-icons [aria-label^="."] { opacity: 0.33 } */
 .file-icons [aria-label$=".bak"] { opacity: 0.33 }
 
 .file-icons [data-type=audio] i::before { content: 'volume_up' }
